@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "94599454-9a1a-4d5f-83d8-65804d639790",
+		"name": "Face Attendance APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23942854"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Post Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"contentType": "multipart/form-data",
+									"type": "file",
+									"src": "/C:/Users/MTM/OneDrive/Pictures/Screenshots/Screenshot 2023-02-19 183647.png"
+								},
+								{
+									"key": "name",
+									"value": "Test Name",
+									"type": "text"
+								},
+								{
+									"key": "empolyeeId",
+									"value": "2052000",
+									"type": "text"
+								},
+								{
+									"key": "department",
+									"value": "Test Department",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "Test Position",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Attendance",
+			"item": [
+				{
+					"name": "Get User By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/getUserId/123456789",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"getUserId",
+								"123456789"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Attendance By Date",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/attendance?date=2023-04-27",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"attendance"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2023-04-27"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Attendance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MTM/OneDrive/Pictures/Screenshots/Screenshot 2023-02-19 183609.png"
+								},
+								{
+									"key": "user",
+									"value": "64484a6745c5b9bd54e2fba8",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2023-04-20",
+									"type": "text"
+								},
+								{
+									"key": "attendance_time",
+									"value": "18:34:09 PM",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/attendance",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"attendance"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
